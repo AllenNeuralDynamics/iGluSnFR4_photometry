@@ -1,6 +1,6 @@
 # iGluSnFR4_photometry
 
-Analysis codes to reproduce fiber photometry figures shown in the iGluSnFR4 paper (Addarwal et al., 2025)
+Analysis codes to reproduce fiber photometry figures shown in the iGluSnFR4 paper (Aggarwal et al., 2025)
 
 Preprint: https://www.biorxiv.org/content/10.1101/2025.03.20.643984v1
 
