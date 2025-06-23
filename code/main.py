@@ -1,16 +1,4 @@
 
-#%% -*- coding: utf-8 -*-
-"""
-Created on Fri May 19 15:34:14 2023
-
-For 1CS-US Probablisic Pavlovian Conditioning
-
-TrialType_
-21-29:CS3 Rewarded
-30: CS3 UnRewarded
-
-@author: kenta.hagihara
-"""
 import os
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
@@ -25,7 +13,6 @@ from scipy.stats import sem
 
 import PreprocessingFunctions as pf
 
-#plt.close('all')
 SaveDir_Anal = r'/root/capsule/scratch/Analysis/'
 SaveDir_Fig = r'/root/capsule/scratch/Fig/'
 
