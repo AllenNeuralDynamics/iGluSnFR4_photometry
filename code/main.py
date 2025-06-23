@@ -50,8 +50,6 @@ for ii in range(len(AnalDirList)):
 
     AnalDir = AnalDirList[ii]
     print("Now processing: " + AnalDir)
-
-
     file1  = glob.glob(AnalDir + '/fib' + os.sep + "FIP_DataIso_*")[0]
     file2 = glob.glob(AnalDir + '/fib' + os.sep + "FIP_DataG_*")[0]
     file3 = glob.glob(AnalDir + '/fib' + os.sep + "FIP_DataR_*")[0]
