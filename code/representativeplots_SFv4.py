@@ -25,15 +25,15 @@ from scipy.stats import sem
 import PreprocessingFunctions as pf
 
 #plt.close('all')
-SaveDir_Anal = r'/root/capsule/scratch/Analysis/'
-SaveDir_Fig = r'/root/capsule/scratch/Fig/'
+SaveDir_Anal = r'/results/Analysis/'
+SaveDir_Fig = r'/results/Fig/'
 
 if not os.path.exists(SaveDir_Anal):
     os.mkdir(SaveDir_Anal)
 if not os.path.exists(SaveDir_Fig):
     os.mkdir(SaveDir_Fig)
 
-folder_path = '/root/capsule/data'
+folder_path = '/data'
 
 # for visualization
 Roi2Vis=[0,1]
@@ -52,13 +52,13 @@ preW=100 #nframes for PSTH
 LickWindow=5.0 #sec window length for Consummatory/Omission licks
 
 #%%
-AnalDir = r"/root/capsule/data/behavior_734806_2024-09-27_19-18-53"
+AnalDir = r"/data/combined/behavior_734806_2024-09-27_19-18-53"
 print("Now processing: " + AnalDir)
 
 file1  = glob.glob(AnalDir + '/fib' + os.sep + "FIP_DataIso_*")[0]
 file2 = glob.glob(AnalDir + '/fib' + os.sep + "FIP_DataG_*")[0]
 file3 = glob.glob(AnalDir + '/fib' + os.sep + "FIP_DataR_*")[0]
-SubjectID = AnalDir.split('/')[4].split('_')[1]
+SubjectID = AnalDir.split('/')[3].split('_')[1]
 
 with open(file1) as f:
     reader = csv.reader(f)
@@ -556,7 +556,7 @@ plt.axvspan(0, 2.5, color = [0, 0, 1, 0.2])
 plt.grid(True)
 plt.xlim([-5, 15])
 plt.ylim([yMin, yMax])
-plt.title(SubjectID + '  iGluSnFR3.v857.PDGFR')
+plt.title(SubjectID + '  SF-iGluSnFR')
 plt.xlabel('Time - Reward Consumption (s)' )
 plt.ylabel('dF/F (%)')
 
@@ -573,10 +573,10 @@ plt.xlabel('Time - Reward Consumption (s)' )
 plt.ylabel('dF/F (%)')
 plt.tight_layout
 
-plt.savefig(SaveDir_Fig + SubjectID + "_iGlu3vs4.pdf")
-plt.savefig(SaveDir_Fig + SubjectID + "_iGlu3vs4.png")
+plt.savefig(SaveDir_Fig + SubjectID + "_SFiGluvs4.pdf")
+plt.savefig(SaveDir_Fig + SubjectID + "_SFGluvs4.png")
 #
-plt.savefig(SaveDir_Fig + SubjectID + "_iGlu3vs4.pdf")
+plt.savefig(SaveDir_Fig + SubjectID + "_SFiGluvs4.pdf")
 np.save(SaveDir_Anal + SubjectID + "Psth_G_RewardC.npy", Psth_G_RewardC)
 np.save(SaveDir_Anal + SubjectID + "Psth_R_RewardC.npy", Psth_R_RewardC)
 np.save(SaveDir_Anal + SubjectID + "Psth_C_RewardC.npy", Psth_C_RewardC)
@@ -595,7 +595,7 @@ plt.ylabel('dF/F (%)')
 plt.title("SubjectID: " + SubjectID + "  Date: " + os.path.basename(os.path.dirname(AnalDir)))
 plt.xlim([0, time_seconds[-1]])
 plt.grid(True)
-plt.savefig(SaveDir_Fig + SubjectID + "_iGlu3vs4_Traces.pdf")
+plt.savefig(SaveDir_Fig + SubjectID + "_SFiGluvs4_Traces.pdf")
 
 
 #%%

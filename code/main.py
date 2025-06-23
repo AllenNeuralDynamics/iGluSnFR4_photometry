@@ -13,15 +13,15 @@ from scipy.stats import sem
 
 import PreprocessingFunctions as pf
 
-SaveDir_Anal = r'/root/capsule/scratch/Analysis/'
-SaveDir_Fig = r'/root/capsule/scratch/Fig/'
+SaveDir_Anal = r'/results/Analysis/'
+SaveDir_Fig = r'/results/Fig/'
 
 if not os.path.exists(SaveDir_Anal):
     os.mkdir(SaveDir_Anal)
 if not os.path.exists(SaveDir_Fig):
     os.mkdir(SaveDir_Fig)
 
-folder_path = '/root/capsule/data'
+folder_path = '/data/combined'
 
 AnalDirList = [
     os.path.join(folder_path, name)
@@ -55,7 +55,7 @@ for ii in range(len(AnalDirList)):
     file1  = glob.glob(AnalDir + '/fib' + os.sep + "FIP_DataIso_*")[0]
     file2 = glob.glob(AnalDir + '/fib' + os.sep + "FIP_DataG_*")[0]
     file3 = glob.glob(AnalDir + '/fib' + os.sep + "FIP_DataR_*")[0]
-    SubjectID = AnalDir.split('/')[4].split('_')[1]
+    SubjectID = AnalDir.split('/')[3].split('_')[1]
 
     with open(file1) as f:
         reader = csv.reader(f)

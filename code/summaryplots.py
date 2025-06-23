@@ -7,9 +7,11 @@ Created on Thu Nov 21 05:13:09 2024
 #%%
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
+import scikit_posthocs as sp
 
-AnalDir = r"/root/capsule/scratch/Analysis/"
-SaveDir_Fig = r'/root/capsule/scratch/Fig/'
+AnalDir = r"/results/Analysis/"
+SaveDir_Fig = r'/results/Fig/'
 #DAT 3 vs 4
 Data1 = np.load(AnalDir + "751752Psth_G_RewardC.npy")
 Data2 = np.load(AnalDir + "761754Psth_G_RewardC.npy")
@@ -271,14 +273,10 @@ plt.tight_layout()
 plt.savefig(SaveDir_Fig + "GadCre_234_Summary_nopaired.pdf")
 
 # %%
-import pandas as pd
-import scikit_posthocs as sp
-
 df = pd.DataFrame({
     "group": ["control"] * 10 + ["SFiGlu"] * 5 + ["iGlu3"] * 5,
     "value": np.hstack((group2[1, :], group3[1, :], group3[0, :],group2[0, :])).tolist()
 })
 
 dunn = sp.posthoc_dunn(df, val_col="value", group_col="group", p_adjust="holm")
-
 print(dunn)
