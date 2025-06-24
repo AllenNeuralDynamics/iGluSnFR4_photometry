@@ -1,0 +1,8 @@
+metadata_version: 1
+name: iGluSnFR4 photometry
+description: |-
+  Analysis code to reproduce fiber photometry figures shown in the iGluSnFR4 paper (Aggarwal et al., 2025).
+
+  Preprint: https://www.biorxiv.org/content/10.1101/2025.03.20.643984v1
+authors:
+- name: Kenta Hagihara
