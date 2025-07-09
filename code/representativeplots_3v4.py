@@ -583,8 +583,7 @@ plt.ylabel('dF/F (%)')
 plt.title("SubjectID: " + SubjectID + "  Date: " + os.path.basename(os.path.dirname(AnalDir)))
 plt.xlim([0, time_seconds[-1]])
 plt.grid(True)
-plt.savefig("Figure5b_iGlu3vs4_Traces.pdf")
-
+plt.savefig(SaveDir_Fig + "Figure5b_iGlu3vs4_Traces.pdf")
 
 #%%
 plt.figure(figsize=(12,4))
@@ -599,5 +598,5 @@ plt.xlabel('Time (seconds)')
 plt.ylabel('dF/F (%)')
 plt.title("SubjectID: " + SubjectID + "  Date: " + os.path.basename(os.path.dirname(AnalDir)))
 plt.xlim([950, 1000])
-plt.savefig("Figure5c_iGlu3vs4_PSTHs.pdf")
+plt.savefig(SaveDir_Fig + "Figure5c_iGlu3vs4_PSTHs.pdf")
 # %%
