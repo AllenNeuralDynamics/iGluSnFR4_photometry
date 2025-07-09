@@ -11,7 +11,7 @@ import pandas as pd
 import scikit_posthocs as sp
 
 AnalDir = r"/results/Analysis/"
-SaveDir_Fig = r'/results/Fig/'
+SaveDir_Fig = r'/results/Fig_publication/'
 #DAT 3 vs 4
 Data1 = np.load(AnalDir + "751752Psth_G_RewardC.npy")
 Data2 = np.load(AnalDir + "761754Psth_G_RewardC.npy")
@@ -228,7 +228,7 @@ plt.xlim([0.7, 2.3])
 plt.ylim([0, 8])
 
 plt.tight_layout()
-plt.savefig(SaveDir_Fig + "GadCre_234_Summary.pdf")
+plt.savefig(SaveDir_Fig + "Figure5d_Summary.pdf")
 
 
 # %%
@@ -270,7 +270,7 @@ plt.xlim([0.7, 3.3])
 plt.ylim([0, 8])
 
 plt.tight_layout()
-plt.savefig(SaveDir_Fig + "GadCre_234_Summary_nopaired.pdf")
+plt.savefig(SaveDir_Fig + "GadCre_234_Summary_nopaired_RevisionFig.pdf")
 
 # %%
 df = pd.DataFrame({

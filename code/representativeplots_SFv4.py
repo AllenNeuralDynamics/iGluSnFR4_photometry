@@ -14,7 +14,7 @@ import PreprocessingFunctions as pf
 
 #plt.close('all')
 SaveDir_Anal = r'/results/Analysis/'
-SaveDir_Fig = r'/results/Fig/'
+SaveDir_Fig = r'/results/Fig_publication/'
 
 if not os.path.exists(SaveDir_Anal):
     os.mkdir(SaveDir_Anal)
@@ -157,9 +157,8 @@ plt.axvspan(CS3Frames[0]/20, CS3Frames[0]/20, color = [1, 0, 1, 0.4],label='CS3'
 
 plt.legend()
 
-plt.savefig(SaveDir_Fig + SubjectID + "_SessionTrace.pdf")
-plt.savefig(SaveDir_Fig + SubjectID + "_SessionTrace.png")
-    
+#plt.savefig(SaveDir_Fig + SubjectID + "_SessionTrace.pdf")
+#plt.savefig(SaveDir_Fig + SubjectID + "_SessionTrace.png")   
 # PSTH functions (for multiple traces)
 def PSTHmaker(TC, Stims, preW, postW):
     
@@ -406,7 +405,7 @@ plt.tight_layout()
 #
 aID=os.path.basename(AnalDir)
 aDate=os.path.basename(os.path.dirname(AnalDir))
-plt.savefig(SaveDir_Fig + os.sep + 'Summary_' + aID + '_' + aDate + '.pdf')
+#plt.savefig(SaveDir_Fig + os.sep + 'Summary_' + aID + '_' + aDate + '.pdf')
 #if bool(glob.glob(AnalDir + os.sep + "TrialN_*")) == True:
 
 
@@ -561,13 +560,12 @@ plt.xlabel('Time - Reward Consumption (s)' )
 plt.ylabel('dF/F (%)')
 plt.tight_layout
 
-plt.savefig(SaveDir_Fig + SubjectID + "_SFiGluvs4.pdf")
-plt.savefig(SaveDir_Fig + SubjectID + "_SFGluvs4.png")
+#plt.savefig(SaveDir_Fig + SubjectID + "_SFiGluvs4.pdf")
+#plt.savefig(SaveDir_Fig + SubjectID + "_SFGluvs4.png")
 #
-plt.savefig(SaveDir_Fig + SubjectID + "_SFiGluvs4.pdf")
-np.save(SaveDir_Anal + SubjectID + "Psth_G_RewardC.npy", Psth_G_RewardC)
-np.save(SaveDir_Anal + SubjectID + "Psth_R_RewardC.npy", Psth_R_RewardC)
-np.save(SaveDir_Anal + SubjectID + "Psth_C_RewardC.npy", Psth_C_RewardC)
+#np.save(SaveDir_Anal + SubjectID + "Psth_G_RewardC.npy", Psth_G_RewardC)
+#np.save(SaveDir_Anal + SubjectID + "Psth_R_RewardC.npy", Psth_R_RewardC)
+#np.save(SaveDir_Anal + SubjectID + "Psth_C_RewardC.npy", Psth_C_RewardC)
 
 #
 plt.figure(figsize=(12,4))
@@ -583,8 +581,7 @@ plt.ylabel('dF/F (%)')
 plt.title("SubjectID: " + SubjectID + "  Date: " + os.path.basename(os.path.dirname(AnalDir)))
 plt.xlim([0, time_seconds[-1]])
 plt.grid(True)
-plt.savefig(SaveDir_Fig + SubjectID + "_SFiGluvs4_Traces.pdf")
-
+plt.savefig("Figure5b_SFiGluvs4_Traces.pdf")
 
 #%%
 plt.figure(figsize=(12,4))
@@ -599,5 +596,4 @@ plt.xlabel('Time (seconds)')
 plt.ylabel('dF/F (%)')
 plt.title("SubjectID: " + SubjectID + "  Date: " + os.path.basename(os.path.dirname(AnalDir)))
 plt.xlim([2050, 2100])
-plt.savefig(SaveDir_Fig + SubjectID + "_Representative_Traces.pdf")
-# %%
+plt.savefig("Figure5c_SFiGluvs4_PSTHs.pdf")

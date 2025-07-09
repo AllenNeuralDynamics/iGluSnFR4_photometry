@@ -14,7 +14,7 @@ import PreprocessingFunctions as pf
 
 #plt.close('all')
 SaveDir_Anal = r'/results/Analysis/'
-SaveDir_Fig = r'/results/Fig/'
+SaveDir_Fig = r'/results/Fig_publication/'
 
 if not os.path.exists(SaveDir_Anal):
     os.mkdir(SaveDir_Anal)
@@ -407,7 +407,7 @@ plt.tight_layout()
 #
 aID=os.path.basename(AnalDir)
 aDate=os.path.basename(os.path.dirname(AnalDir))
-plt.savefig(SaveDir_Fig + os.sep + 'Summary_' + aID + '_' + aDate + '.pdf')
+#plt.savefig(SaveDir_Fig + os.sep + 'Summary_' + aID + '_' + aDate + '.pdf')
 #if bool(glob.glob(AnalDir + os.sep + "TrialN_*")) == True:
 
 
@@ -562,13 +562,12 @@ plt.xlabel('Time - Reward Consumption (s)' )
 plt.ylabel('dF/F (%)')
 plt.tight_layout
 
-plt.savefig(SaveDir_Fig + SubjectID + "_iGlu3vs4.pdf")
-plt.savefig(SaveDir_Fig + SubjectID + "_iGlu3vs4.png")
+#plt.savefig(SaveDir_Fig + SubjectID + "_iGlu3vs4.pdf")
+#plt.savefig(SaveDir_Fig + SubjectID + "_iGlu3vs4.png")
 #
-plt.savefig(SaveDir_Fig + SubjectID + "_iGlu3vs4.pdf")
-np.save(SaveDir_Anal + SubjectID + "Psth_G_RewardC.npy", Psth_G_RewardC)
-np.save(SaveDir_Anal + SubjectID + "Psth_R_RewardC.npy", Psth_R_RewardC)
-np.save(SaveDir_Anal + SubjectID + "Psth_C_RewardC.npy", Psth_C_RewardC)
+#np.save(SaveDir_Anal + SubjectID + "Psth_G_RewardC.npy", Psth_G_RewardC)
+#np.save(SaveDir_Anal + SubjectID + "Psth_R_RewardC.npy", Psth_R_RewardC)
+#np.save(SaveDir_Anal + SubjectID + "Psth_C_RewardC.npy", Psth_C_RewardC)
 
 #
 plt.figure(figsize=(12,4))
@@ -584,7 +583,7 @@ plt.ylabel('dF/F (%)')
 plt.title("SubjectID: " + SubjectID + "  Date: " + os.path.basename(os.path.dirname(AnalDir)))
 plt.xlim([0, time_seconds[-1]])
 plt.grid(True)
-plt.savefig(SaveDir_Fig + SubjectID + "_iGlu3vs4_Traces.pdf")
+plt.savefig("Figure5b_iGlu3vs4_Traces.pdf")
 
 
 #%%
@@ -600,5 +599,5 @@ plt.xlabel('Time (seconds)')
 plt.ylabel('dF/F (%)')
 plt.title("SubjectID: " + SubjectID + "  Date: " + os.path.basename(os.path.dirname(AnalDir)))
 plt.xlim([950, 1000])
-plt.savefig(SaveDir_Fig + SubjectID + "_Representative_Traces.pdf")
+plt.savefig("Figure5c_iGlu3vs4_PSTHs.pdf")
 # %%

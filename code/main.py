@@ -14,7 +14,7 @@ from scipy.stats import sem
 import PreprocessingFunctions as pf
 
 SaveDir_Anal = r'/results/Analysis/'
-SaveDir_Fig = r'/results/Fig/'
+SaveDir_Fig = r'/results/Fig_individual/'
 
 if not os.path.exists(SaveDir_Anal):
     os.mkdir(SaveDir_Anal)
@@ -571,7 +571,6 @@ for ii in range(len(AnalDirList)):
     plt.savefig(SaveDir_Fig + SubjectID + "_iGlu3vs4.pdf")
     plt.savefig(SaveDir_Fig + SubjectID + "_iGlu3vs4.png")
     #
-    plt.savefig(SaveDir_Fig + SubjectID + "_iGlu3vs4.pdf")
     np.save(SaveDir_Anal + SubjectID + "Psth_G_RewardC.npy", Psth_G_RewardC)
     np.save(SaveDir_Anal + SubjectID + "Psth_R_RewardC.npy", Psth_R_RewardC)
     np.save(SaveDir_Anal + SubjectID + "Psth_C_RewardC.npy", Psth_C_RewardC)
