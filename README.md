@@ -1,10 +1,25 @@
 # iGluSnFR4 photometry
 
-Analysis codes to reproduce fiber photometry figures shown in the iGluSnFR4 paper (Aggarwal et al., 2025)
+Analysis codes to reproduce panels in the fiber photometry figure (Figure 5) shown in the iGluSnFR4 paper (Aggarwal et al., 2025)
 
 Preprint: https://www.biorxiv.org/content/10.1101/2025.03.20.643984v1
 
 Publication: TBA
+
+
+# For CodeOcean users
+
+For source code, see this [github repo](https://github.com/AllenNeuralDynamics/iGluSnFR4_photometry) associated with the reproducible capsule.
+
+
+
+# Experiments and data
+
+The dataset involves fiber photomety measurement in behaving mice engagin in Pavlovian conditioning, where water reward is presented to mildly water-deprived mice following an auditory conditioned stimulus.
+Behavior task control and photomtery data acquisition were performed using custom written Bonsai software described in [the dedicated github repo](https://github.com/AllenNeuralDynamics/PavlovianCond_Bonsai).
+
+Structure of the data is described in the [AIND file-standard repo](https://github.com/AllenNeuralDynamics/aind-file-standards/blob/main/file_formats/fip.md).
+
 
 # Reproducing these results 
 
@@ -42,10 +57,14 @@ You can download them using standard S3 client tools like the [awscli](https://a
 ### Code
 
 Once you have a copy of the repository, environment, and data, run `bash {repository-directory}/code/run` inside the docker container. This triggers the following .py files in this order:
-1. `/code/main.py`
-2. `/code/representativeplots_SFv4.py`
-3. `/code/representativeplots_3v4.py`
-4. `/code/summaryplots.py`
+1. `/code/main.py`   
+This step does signal preprocessing (using preprocessing functions organised in `/code/preprocessing.py`), PSTH preparation, saving intermediate data and figures (not shown in the paper) for each session.  
+2. `/code/representativeplots_SFv4.py`   
+This step produces the representative plot shown in Figure 5b and c, based on the intermediate PSTH data from the step1.
+3. `/code/representativeplots_3v4.py`   
+This step produces the representative plot shown in Figure 5b and c, based on the intermediate PSTH data from the step1.
+4. `/code/summaryplots.py`   
+This step produces the summary quantification shown in Figure 5d.
 
-All figures will be saved in the `/results/Fig` folder.
+All figures used in the publication will be saved in the `/results/Fig_publication` folder with filenames corresponding to figure panels.
 
