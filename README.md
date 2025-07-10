@@ -15,11 +15,11 @@ For source code, see this [github repo](https://github.com/AllenNeuralDynamics/i
 
 # Experiments and data
 
-The dataset involves fiber photomety measurement in behaving mice engagin in Pavlovian conditioning, where water reward is presented to mildly water-deprived mice following an auditory conditioned stimulus.
-Behavior task control and photomtery data acquisition were performed using custom written Bonsai software described in [the dedicated github repo](https://github.com/AllenNeuralDynamics/PavlovianCond_Bonsai).
+The dataset involves fiber photometry measurements in behaving mice engaged in Pavlovian conditioning, where a water reward is delivered to mildly water-deprived mice following an auditory conditioned stimulus.
+Behavioural task control and photometry data acquisition were performed using custom-written Bonsai software, as described in [the Github repo](https://github.com/AllenNeuralDynamics/PavlovianCond_Bonsai).
 
-Structure of the data is described in the [AIND file-standard repo](https://github.com/AllenNeuralDynamics/aind-file-standards/blob/main/file_formats/fip.md).
-
+Structure of the fiber photometry data is described in the [AIND file-standard repo](https://github.com/AllenNeuralDynamics/aind-file-standards/blob/main/file_formats/fip.md).
+Behavior data will be described soon in the same file-standard repo.
 
 # Reproducing these results 
 
