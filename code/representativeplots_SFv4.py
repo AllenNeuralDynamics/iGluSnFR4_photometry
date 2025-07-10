@@ -560,7 +560,7 @@ plt.xlabel('Time - Reward Consumption (s)' )
 plt.ylabel('dF/F (%)')
 plt.tight_layout
 
-#plt.savefig(SaveDir_Fig + SubjectID + "_SFiGluvs4.pdf")
+plt.savefig(SaveDir_Fig + "Figure5c_SFiGluvs4_PSTHs.pdf")
 #plt.savefig(SaveDir_Fig + SubjectID + "_SFGluvs4.png")
 #
 #np.save(SaveDir_Anal + SubjectID + "Psth_G_RewardC.npy", Psth_G_RewardC)
@@ -581,7 +581,7 @@ plt.ylabel('dF/F (%)')
 plt.title("SubjectID: " + SubjectID + "  Date: " + os.path.basename(os.path.dirname(AnalDir)))
 plt.xlim([0, time_seconds[-1]])
 plt.grid(True)
-plt.savefig(SaveDir_Fig + "Figure5b_SFiGluvs4_Traces.pdf")
+#plt.savefig(SaveDir_Fig + "Figure5b_SFiGluvs4_RawTraces.pdf")
 
 #%%
 plt.figure(figsize=(12,4))
@@ -596,4 +596,4 @@ plt.xlabel('Time (seconds)')
 plt.ylabel('dF/F (%)')
 plt.title("SubjectID: " + SubjectID + "  Date: " + os.path.basename(os.path.dirname(AnalDir)))
 plt.xlim([2050, 2100])
-plt.savefig(SaveDir_Fig + "Figure5c_SFiGluvs4_PSTHs.pdf")
+plt.savefig(SaveDir_Fig + "Figure5b_SFiGluvs4_Traces.pdf")

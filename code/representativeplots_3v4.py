@@ -158,8 +158,8 @@ plt.axvspan(CS3Frames[0]/20, CS3Frames[0]/20, color = [1, 0, 1, 0.4],label='CS3'
 
 plt.legend()
 
-plt.savefig(SaveDir_Fig + SubjectID + "_SessionTrace.pdf")
-plt.savefig(SaveDir_Fig + SubjectID + "_SessionTrace.png")
+#plt.savefig(SaveDir_Fig + SubjectID + "_SessionTrace.pdf")
+#plt.savefig(SaveDir_Fig + SubjectID + "_SessionTrace.png")
     
 # PSTH functions (for multiple traces)
 def PSTHmaker(TC, Stims, preW, postW):
@@ -562,7 +562,7 @@ plt.xlabel('Time - Reward Consumption (s)' )
 plt.ylabel('dF/F (%)')
 plt.tight_layout
 
-#plt.savefig(SaveDir_Fig + SubjectID + "_iGlu3vs4.pdf")
+plt.savefig(SaveDir_Fig + "Figure5c_iGlu3vs4_PSTHs.pdf")
 #plt.savefig(SaveDir_Fig + SubjectID + "_iGlu3vs4.png")
 #
 #np.save(SaveDir_Anal + SubjectID + "Psth_G_RewardC.npy", Psth_G_RewardC)
@@ -583,7 +583,7 @@ plt.ylabel('dF/F (%)')
 plt.title("SubjectID: " + SubjectID + "  Date: " + os.path.basename(os.path.dirname(AnalDir)))
 plt.xlim([0, time_seconds[-1]])
 plt.grid(True)
-plt.savefig(SaveDir_Fig + "Figure5b_iGlu3vs4_Traces.pdf")
+#plt.savefig(SaveDir_Fig + "Figure5b_iGlu3vs4_RawTraces.pdf")
 
 #%%
 plt.figure(figsize=(12,4))
@@ -598,5 +598,5 @@ plt.xlabel('Time (seconds)')
 plt.ylabel('dF/F (%)')
 plt.title("SubjectID: " + SubjectID + "  Date: " + os.path.basename(os.path.dirname(AnalDir)))
 plt.xlim([950, 1000])
-plt.savefig(SaveDir_Fig + "Figure5c_iGlu3vs4_PSTHs.pdf")
+plt.savefig(SaveDir_Fig + "Figure5b_iGlu3vs4_Traces.pdf")
 # %%
